@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "drift-check"
+version = "1.0.0"
+description = "A terminal reading of the gap between Stated System and Lived System. Companion utility to Leading Agile When No One Agrees."
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [
+    {name = "Kyle Hauslaib"},
+]
+keywords = ["agile", "engineering-leadership", "diagnostic", "cli", "drift"]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Office/Business",
+    "Topic :: Utilities",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/hauslaib/drift-cli"
+Book = "https://kylehauslaib.com/companion/"
+Companion = "https://github.com/hauslaib/leading-agile-companion"
+Issues = "https://github.com/hauslaib/drift-cli/issues"
+
+[project.scripts]
+drift = "drift.__main__:main"
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0"]
+
+[tool.setuptools]
+packages = ["drift"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
