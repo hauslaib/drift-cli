@@ -12,9 +12,14 @@ tool enforces this in code.
 from __future__ import annotations
 import json
 import os
+import re
 import datetime
 from pathlib import Path
 from typing import List, Dict, Any
+
+# Score files are named <date>.json, with same-day repeats suffixed
+# <date>-2.json, <date>-3.json, and so on.
+_FILENAME_RE = re.compile(r"^(\d{4}-\d{2}-\d{2})(?:-(\d+))?$")
 
 
 def _storage_dir() -> Path:
@@ -52,6 +57,21 @@ def save_check(scores: Dict[int, int], *, label: str | None = None) -> Path:
     return path
 
 
+def _history_sort_key(path: Path) -> tuple:
+    """Order score files by date, then by same-day sequence.
+
+    A bare <date>.json is the first save of that day and sorts before
+    <date>-2.json, <date>-3.json, and so on. Plain string sorting would
+    put <date>-2.json first, because '-' precedes '.', so the sequence
+    number is parsed out and compared as an integer.
+    """
+    match = _FILENAME_RE.match(path.stem)
+    if match:
+        return (match.group(1), int(match.group(2) or 1))
+    # Names that do not fit the pattern sort last, by stem.
+    return ("9999", 0, path.stem)
+
+
 def load_history() -> List[Dict[str, Any]]:
     """Return all saved checks, ordered by date ascending.
 
@@ -62,7 +82,7 @@ def load_history() -> List[Dict[str, Any]]:
         return []
 
     out = []
-    for path in sorted(storage.glob("*.json")):
+    for path in sorted(storage.glob("*.json"), key=_history_sort_key):
         try:
             data = json.loads(path.read_text(encoding="utf-8"))
             data["__path"] = str(path)
