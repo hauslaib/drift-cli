@@ -1,0 +1,14 @@
+{
+  "title": "Drift CLI",
+  "upload_type": "software",
+  "description": "A terminal reading of the gap between an organisation's Stated System and its Lived System: a command-line version of the five-question Drift Check from the book Leading Agile When No One Agrees by Kyle Hauslaib. Code is MIT licensed; the question text and reading bands are licensed separately (see the repository).",
+  "creators": [{ "name": "Hauslaib, Kyle", "orcid": "0009-0008-8059-6364" }],
+  "license": "MIT",
+  "access_right": "open",
+  "keywords": ["drift framework","self-assessment","command-line","stated system","lived system","agile leadership"],
+  "related_identifiers": [
+    { "relation": "isDocumentedBy", "identifier": "https://kylehauslaib.com/drift/", "scheme": "url" },
+    { "relation": "isVariantFormOf", "identifier": "10.5281/zenodo.20786354", "scheme": "doi" },
+    { "relation": "isDerivedFrom", "identifier": "978-3-9828982-0-9", "scheme": "isbn" }
+  ]
+}

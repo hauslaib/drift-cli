@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+title: "Drift CLI"
+abstract: >-
+  A terminal reading of the gap between an organisation's Stated System and its Lived
+  System: a command-line version of the five-question Drift Check from the book
+  Leading Agile When No One Agrees by Kyle Hauslaib. Code is MIT licensed; the question
+  text and reading bands are licensed separately (see the repository).
+type: software
+authors:
+  - family-names: Hauslaib
+    given-names: Kyle
+    orcid: "https://orcid.org/0009-0008-8059-6364"
+    website: "https://kylehauslaib.com"
+repository-code: "https://github.com/hauslaib/drift-cli"
+url: "https://kylehauslaib.com/companion/"
+license: MIT
+version: "1.0.0"
+date-released: "2026-06-21"
+keywords:
+  - drift framework
+  - self-assessment
+  - command-line
+  - stated system
+  - lived system
+  - agile leadership
