@@ -1,5 +1,7 @@
 # drift
 
+[![DOI](https://zenodo.org/badge/1237866128.svg)](https://doi.org/10.5281/zenodo.20786450)
+
 A five-question terminal reading of the gap between what your organisation
 says it does and what it does in practice. Companion utility to *Leading
 Agile When No One Agrees* by Kyle Hauslaib.
@@ -152,3 +154,11 @@ https://github.com/hauslaib/leading-agile-companion.
 ---
 
 Kyle Hauslaib, 2026.
+
+## Citation
+
+If you use Drift CLI, please cite the archived release:
+
+> Hauslaib, K. (2026). *Drift CLI* (Version 1.0.0) [Software]. Zenodo. https://doi.org/10.5281/zenodo.20786450
+
+The DOI above is the concept DOI and always resolves to the latest version. A machine-readable citation is in [`CITATION.cff`](CITATION.cff).
